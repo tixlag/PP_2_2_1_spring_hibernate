@@ -21,8 +21,7 @@ public class User {
 
    // Не до конца понимаю как работает... @JoinColumns завести не удалось,
    // а это выглядит просто как магия. Где брать теорию??
-   @OneToOne
-   @MapsId
+   @OneToOne(optional = true)
    private  Car car;
 
    public User() {}
@@ -35,6 +34,10 @@ public class User {
 
    public Car getCar() {
       return car;
+   }
+
+   public void setCar(Car car) {
+      this.car = car;
    }
 
    public User(String firstName, String lastName, String email, Car car) {
