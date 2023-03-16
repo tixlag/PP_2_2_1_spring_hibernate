@@ -40,10 +40,10 @@ public class MainApp {
       userService.add(new User("User3", "Lastname3", "user3@mail.ru", new Car("BMW", 3)));
       userService.add(new User("User4", "Lastname4", "user4@mail.ru", new Car("BMW", 4)));
 
-//      User testUser = new User("тест", "сеттера машины", "h@zc.xx");
-//      userService.add(new User("тест", "сеттера машины", "h@zc.xx"));
-//      Car testCar = new Car("added", 0);
-//      userService.addCar(testUser, testCar);
+      User testUser = new User("тест", "сеттера машины", "h@zc.xx");
+      userService.add(testUser);
+      Car testCar = new Car("added", 0);
+      userService.addCar(testUser, testCar);
 
       // Todo разобраться с one-to-one и проч...
 

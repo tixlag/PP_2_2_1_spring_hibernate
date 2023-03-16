@@ -19,9 +19,9 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   // Не до конца понимаю как работает... @JoinColumns завести не удалось,
-   // а это выглядит просто как магия. Где брать теорию??
-   @OneToOne(optional = true)
+   // Такое связывание работает хорошо. Мне нравится
+   @OneToOne(optional = true, cascade=CascadeType.ALL)
+   @JoinColumn(name = "car_id")
    private  Car car;
 
    public User() {}

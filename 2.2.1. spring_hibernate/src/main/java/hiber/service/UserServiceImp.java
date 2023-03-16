@@ -11,18 +11,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+
 public class UserServiceImp implements UserService {
 
    @Autowired
    private UserDao userDao;
 
-   @Autowired
-   private CarDao carDao;
 
    @Transactional
    @Override
    public void add(User user) {
-      if (user.getCar() != null) carDao.add(user.getCar());
+//      if (user.getCar() != null) carDao.add(user.getCar());
       userDao.add(user);
    }
 
@@ -39,8 +38,8 @@ public class UserServiceImp implements UserService {
    }
 
    @Override
+   @Transactional
    public void addCar(User user, Car car) {
-      carDao.add(car);
       user.setCar(car);
       userDao.update(user);
    }
